@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zena Ocean Tales</title>
+    <!-- 구글 폰트 Pretendard, Noto Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', 'Nunito', Arial, sans-serif;
+            background: linear-gradient(135deg, #e0f7fa 0%, #ffffff 100%);
+            color: #222;
+        }
+        .navbar {
+            background: rgba(255,255,255,0.95);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .navbar-brand {
+            font-weight: bold;
+            color: #1e88e5 !important;
+            letter-spacing: 1px;
+            font-size: 1.5rem;
+        }
+        .navbar-nav .nav-link {
+            color: #1976d2 !important;
+            font-weight: 500;
+            margin-right: 10px;
+        }
+        .navbar-nav .nav-link.active, .navbar-nav .nav-link:hover {
+            color: #00bcd4 !important;
+        }
+        .hero-section {
+            background: linear-gradient(120deg, #b3e5fc 0%, #e1f5fe 100%);
+            text-align: center;
+            padding: 80px 20px 60px 20px;
+            border-radius: 0 0 60px 60px;
+            box-shadow: 0 8px 32px rgba(30,136,229,0.08);
+            margin-bottom: 40px;
+        }
+        .hero-section img {
+            width: 120px;
+            margin-bottom: 20px;
+        }
+        .hero-section h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1976d2;
+        }
+        .hero-section p {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .btn-main {
+            background: linear-gradient(90deg, #00bcd4 0%, #1976d2 100%);
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            padding: 12px 36px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(30,136,229,0.10);
+            transition: background 0.2s;
+        }
+        .btn-main:hover {
+            background: linear-gradient(90deg, #1976d2 0%, #00bcd4 100%);
+            color: #fff;
+        }
+        .section-title {
+            color: #1976d2;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .feature-card {
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 4px 24px rgba(30,136,229,0.07);
+            padding: 32px 24px;
+            text-align: center;
+            margin-bottom: 30px;
+            transition: transform 0.2s;
+        }
+        .feature-card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 8px 32px rgba(30,136,229,0.13);
+        }
+        .feature-card i {
+            font-size: 2.5rem;
+            color: #00bcd4;
+            margin-bottom: 16px;
+        }
+        .footer {
+            background: #e0f7fa;
+            color: #1976d2;
+            padding: 30px 0 10px 0;
+            text-align: center;
+            border-radius: 40px 40px 0 0;
+            margin-top: 60px;
+            font-size: 1rem;
+        }
+        .social-icons a {
+            color: #1976d2;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.2s;
+        }
+        .social-icons a:hover {
+            color: #00bcd4;
+        }
+    </style>
+</head>
+<body>
+    <!-- 네비게이션 -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="로고" style="height:40px; margin-right:10px;">
+                Zena Ocean Tales
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="#about">소개</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#games">게임</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#token">토큰/채굴</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#nft">NFT마켓</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#dao">DAO/얼라이언스</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">문의</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 히어로 섹션 -->
+    <section class="hero-section" id="about">
+        <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="벨루가 로고">
+        <h1>Zena Ocean Tales</h1>
+        <p>
+            북극의 벨루가와 친구들이 펼치는<br>
+            <b>Web 3.0 PLAY-2-EARN</b> 게임 & 친환경 프로젝트!<br>
+            게임을 즐기며 지구와 북극을 지키는 그린 캠페인에 참여하세요.
+        </p>
+        <a href="#games" class="btn btn-main">게임 둘러보기</a>
+    </section>
+
+    <!-- 게임 섹션 -->
+    <section class="container" id="games">
+        <h2 class="section-title">Zena Games</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <i class="fas fa-fish"></i>
+                    <h5>오션테일즈</h5>
+                    <p>벨루가와 북극 친구들의 모험! 바다를 지키는 퍼즐 & 어드벤처 게임.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <i class="fas fa-puzzle-piece"></i>
+                    <h5>푸르츠 팡팡</h5>
+                    <p>귀여운 과일 친구들과 함께하는 퍼즐 게임. 쉽고 재미있게 코인 채굴!</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <i class="fas fa-ship"></i>
+                    <h5>GALAXY WAR</h5>
+                    <p>우주를 배경으로 펼쳐지는 전략 슈팅! 다양한 보상과 NFT 획득 기회.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 토큰/채굴 섹션 -->
+    <section class="container" id="token">
+        <h2 class="section-title">Zena Token & 채굴</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="feature-card">
+                    <i class="fas fa-coins"></i>
+                    <h5>Zena Coin</h5>
+                    <p>게임 플레이와 다운로드만으로 Zena Coin을 무료로 채굴! 다양한 게임에서 사용 및 거래 가능.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="feature-card">
+                    <i class="fas fa-credit-card"></i>
+                    <h5>Zena Pay</h5>
+                    <p>BC카드, Master카드 가맹점에서 Zena Coin으로 결제! 실생활에서 바로 사용하세요.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NFT 마켓 섹션 -->
+    <section class="container" id="nft">
+        <h2 class="section-title">Zena NFT Market</h2>
+        <div class="feature-card">
+            <i class="fas fa-gem"></i>
+            <h5>저렴한 수수료, 빠른 거래</h5>
+            <p>Polygon 기반의 NFT 마켓에서 Zena Games의 다양한 NFT를 쉽고 빠르게 거래하세요.</p>
+        </div>
+    </section>
+
+    <!-- DAO/얼라이언스 섹션 -->
+    <section class="container" id="dao">
+        <h2 class="section-title">DAO & 얼라이언스</h2>
+        <div class="feature-card">
+            <i class="fas fa-users"></i>
+            <h5>참여자 모두가 주인공!</h5>
+            <p>토큰 홀더, 게임 유저, 크리에이터 누구나 DAO에 참여해 투표와 보상을 받을 수 있습니다.<br>
+            얼라이언스와 함께 성장하는 Web 3.0 생태계!</p>
+        </div>
+    </section>
+
+    <!-- 문의 섹션 -->
+    <section class="container" id="contact">
+        <h2 class="section-title">문의하기</h2>
+        <div class="feature-card">
+            <i class="fas fa-envelope"></i>
+            <h5>Contact</h5>
+            <p>
+                <b>이메일:</b> leviolla70@naver.com<br>
+                <b>전화:</b> 010-8370-7259<br>
+                <b>주소:</b> 서울특별시 강남구 언주로 98길9 국제빌딩 401호
+            </p>
+            <div class="social-icons">
+                <a href="https://twitch.tv/" target="_blank"><i class="fab fa-twitch"></i></a>
+                <a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://discord.com/" target="_blank"><i class="fab fa-discord"></i></a>
+                <a href="https://youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="container">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="로고" style="height:32px; margin-bottom:8px;">
+            <div>
+                © 2024 Zena World Co.Ltd | All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
