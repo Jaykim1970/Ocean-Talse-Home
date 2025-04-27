@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zena Ocean Tales</title>
-    <!-- 구글 폰트 Pretendard, Noto Sans -->
+    <title>ZENA OCEAN TALES</title>
+    <!-- 구글 폰트 -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -13,8 +13,16 @@
     <style>
         body {
             font-family: 'Noto Sans KR', 'Nunito', Arial, sans-serif;
-            background: linear-gradient(135deg, #e0f7fa 0%, #ffffff 100%);
+            background: linear-gradient(135deg, #b3e5fc 0%, #e0f7fa 100%);
             color: #222;
+            margin: 0;
+            padding: 0;
+        }
+        .bg-waves {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: -1;
+            pointer-events: none;
         }
         .navbar {
             background: rgba(255,255,255,0.95);
@@ -37,10 +45,11 @@
         .hero-section {
             background: linear-gradient(120deg, #b3e5fc 0%, #e1f5fe 100%);
             text-align: center;
-            padding: 80px 20px 60px 20px;
+            padding: 90px 20px 60px 20px;
             border-radius: 0 0 60px 60px;
             box-shadow: 0 8px 32px rgba(30,136,229,0.08);
             margin-bottom: 40px;
+            position: relative;
         }
         .hero-section img {
             width: 120px;
@@ -90,10 +99,30 @@
             transform: translateY(-8px) scale(1.03);
             box-shadow: 0 8px 32px rgba(30,136,229,0.13);
         }
+        .feature-card img, .feature-card i {
+            height: 60px;
+            margin-bottom: 16px;
+        }
         .feature-card i {
             font-size: 2.5rem;
             color: #00bcd4;
-            margin-bottom: 16px;
+        }
+        .logo-zena {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Nunito','Noto Sans KR',sans-serif;
+            font-weight: bold;
+            font-size: 2.2rem;
+            color: #1976d2;
+            margin-bottom: 20px;
+        }
+        .logo-zena img {
+            height: 48px;
+            margin-right: 12px;
+        }
+        .logo-zena span {
+            color: #00bcd4;
         }
         .footer {
             background: #e0f7fa;
@@ -113,15 +142,26 @@
         .social-icons a:hover {
             color: #00bcd4;
         }
+        @media (max-width: 768px) {
+            .hero-section { padding: 60px 10px 40px 10px; }
+            .logo-zena { font-size: 1.3rem; }
+        }
     </style>
 </head>
 <body>
+    <!-- SVG 파도 배경 -->
+    <div class="bg-waves">
+        <svg width="100%" height="100%" viewBox="0 0 1920 400" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;bottom:0;left:0;">
+            <path d="M0 300 Q480 400 960 300 T1920 300 V400 H0 Z" fill="#b3e5fc" opacity="0.5"/>
+            <path d="M0 350 Q480 450 960 350 T1920 350 V400 H0 Z" fill="#4fc3f7" opacity="0.3"/>
+        </svg>
+    </div>
     <!-- 네비게이션 -->
     <nav class="navbar navbar-expand-lg navbar-light sticky-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="#">
                 <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="로고" style="height:40px; margin-right:10px;">
-                Zena Ocean Tales
+                ZENA OCEAN TALES
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -130,7 +170,7 @@
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link active" href="#about">소개</a></li>
                     <li class="nav-item"><a class="nav-link" href="#games">게임</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#token">토큰/채굴</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#token">코인/채굴</a></li>
                     <li class="nav-item"><a class="nav-link" href="#nft">NFT마켓</a></li>
                     <li class="nav-item"><a class="nav-link" href="#dao">DAO/얼라이언스</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">문의</a></li>
@@ -141,8 +181,10 @@
 
     <!-- 히어로 섹션 -->
     <section class="hero-section" id="about">
-        <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="벨루가 로고">
-        <h1>Zena Ocean Tales</h1>
+        <div class="logo-zena">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="벨루가 로고">
+            ZENA <span>GAMES</span>
+        </div>
         <p>
             북극의 벨루가와 친구들이 펼치는<br>
             <b>Web 3.0 PLAY-2-EARN</b> 게임 & 친환경 프로젝트!<br>
@@ -153,48 +195,48 @@
 
     <!-- 게임 섹션 -->
     <section class="container" id="games">
-        <h2 class="section-title">Zena Games</h2>
+        <h2 class="section-title">ZENA GAMES</h2>
         <div class="row">
             <div class="col-md-4">
                 <div class="feature-card">
-                    <i class="fas fa-fish"></i>
-                    <h5>오션테일즈</h5>
-                    <p>벨루가와 북극 친구들의 모험! 바다를 지키는 퍼즐 & 어드벤처 게임.</p>
+                    <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="선장">
+                    <h5>벨루가 선장</h5>
+                    <p>북극의 벨루가 선장과 함께 바다를 탐험하세요!</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="feature-card">
-                    <i class="fas fa-puzzle-piece"></i>
-                    <h5>푸르츠 팡팡</h5>
-                    <p>귀여운 과일 친구들과 함께하는 퍼즐 게임. 쉽고 재미있게 코인 채굴!</p>
+                    <img src="https://cdn-icons-png.flaticon.com/512/616/616489.png" alt="해적선">
+                    <h5>해적선 대모험</h5>
+                    <p>해적선과 함께 바다를 누비며 보물을 찾아보세요!</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="feature-card">
-                    <i class="fas fa-ship"></i>
-                    <h5>GALAXY WAR</h5>
-                    <p>우주를 배경으로 펼쳐지는 전략 슈팅! 다양한 보상과 NFT 획득 기회.</p>
+                    <img src="https://cdn-icons-png.flaticon.com/512/616/616491.png" alt="섬과 야자수">
+                    <h5>섬과 야자수</h5>
+                    <p>아름다운 섬과 야자수 아래에서 휴식을 즐기세요!</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 토큰/채굴 섹션 -->
+    <!-- 코인/채굴 섹션 -->
     <section class="container" id="token">
-        <h2 class="section-title">Zena Token & 채굴</h2>
+        <h2 class="section-title">ZENA 생태계 코인</h2>
         <div class="row">
             <div class="col-md-6">
                 <div class="feature-card">
-                    <i class="fas fa-coins"></i>
-                    <h5>Zena Coin</h5>
-                    <p>게임 플레이와 다운로드만으로 Zena Coin을 무료로 채굴! 다양한 게임에서 사용 및 거래 가능.</p>
+                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="코인">
+                    <h5>ZENA COIN</h5>
+                    <p>게임 플레이와 다운로드만으로 ZENA COIN을 무료로 채굴! 다양한 게임에서 사용 및 거래 가능.</p>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="feature-card">
-                    <i class="fas fa-credit-card"></i>
-                    <h5>Zena Pay</h5>
-                    <p>BC카드, Master카드 가맹점에서 Zena Coin으로 결제! 실생활에서 바로 사용하세요.</p>
+                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="코인">
+                    <h5>BELUGA COIN</h5>
+                    <p>달러, 원화와 1:1로 페깅된 스테이블 코인! 결제, 이체, 출금 등 다양한 금융거래 지원.</p>
                 </div>
             </div>
         </div>
@@ -202,11 +244,11 @@
 
     <!-- NFT 마켓 섹션 -->
     <section class="container" id="nft">
-        <h2 class="section-title">Zena NFT Market</h2>
+        <h2 class="section-title">ZENA NFT MARKET</h2>
         <div class="feature-card">
-            <i class="fas fa-gem"></i>
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616492.png" alt="야자수">
             <h5>저렴한 수수료, 빠른 거래</h5>
-            <p>Polygon 기반의 NFT 마켓에서 Zena Games의 다양한 NFT를 쉽고 빠르게 거래하세요.</p>
+            <p>Polygon 기반의 NFT 마켓에서 ZENA GAMES의 다양한 NFT를 쉽고 빠르게 거래하세요.</p>
         </div>
     </section>
 
@@ -214,7 +256,7 @@
     <section class="container" id="dao">
         <h2 class="section-title">DAO & 얼라이언스</h2>
         <div class="feature-card">
-            <i class="fas fa-users"></i>
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="DAO">
             <h5>참여자 모두가 주인공!</h5>
             <p>토큰 홀더, 게임 유저, 크리에이터 누구나 DAO에 참여해 투표와 보상을 받을 수 있습니다.<br>
             얼라이언스와 함께 성장하는 Web 3.0 생태계!</p>
@@ -246,7 +288,7 @@
         <div class="container">
             <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="로고" style="height:32px; margin-bottom:8px;">
             <div>
-                © 2024 Zena World Co.Ltd | All Rights Reserved.
+                © 2024 ZENA OCEAN TALES | All Rights Reserved.
             </div>
         </div>
     </footer>
