@@ -1,1 +1,1 @@
-# Ocean-Talse-Home
+# Ocean-Talse Trading Bot
