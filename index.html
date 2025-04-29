@@ -5,28 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZENA WORLD</title>
     <style>
-        /* 전체 페이지 스타일 */
-        body {
-            font-family: 'Arial', sans-serif;
+        /* 기본 스타일 */
+        * {
             margin: 0;
             padding: 0;
-            background-color: #ffffff;
+            box-sizing: border-box;
         }
 
-        /* 네비게이션 스타일 */
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+
+        /* 네비게이션 */
         .nav {
             background-color: #333;
-            padding: 15px 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
+            padding: 15px 0;
         }
 
         .nav-items {
             display: flex;
             justify-content: center;
             gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .nav-items a {
@@ -47,77 +54,119 @@
             padding: 20px;
         }
 
-        /* 로고 스타일 */
-        .logo {
+        /* 히어로 섹션 */
+        .hero {
             text-align: center;
-            margin: 40px 0;
-        }
-
-        .logo img {
-            max-width: 300px;
-            height: auto;
-        }
-
-        /* Zena Swap 섹션 */
-        .zena-swap {
-            text-align: center;
-            padding: 40px 0;
-        }
-
-        .zena-swap h1 {
-            font-size: 2.5em;
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        .zena-swap p {
-            font-size: 1.2em;
-            color: #666;
-            line-height: 1.6;
+            padding: 60px 0;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/벨루가4.png');
+            background-size: cover;
+            background-position: center;
+            color: white;
             margin-bottom: 40px;
         }
 
-        /* 이미지 그리드 */
-        .image-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            padding: 20px;
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
         }
 
-        .image-grid img {
-            width: 100%;
-            height: auto;
+        .hero p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* 게임 섹션 */
+        .games-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 40px 0;
+        }
+
+        .game-card {
+            background: white;
             border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             transition: transform 0.3s;
         }
 
-        .image-grid img:hover {
-            transform: scale(1.05);
+        .game-card:hover {
+            transform: translateY(-5px);
         }
 
-        /* 소셜 미디어 링크 */
-        .social-links {
+        .game-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .game-card-content {
+            padding: 20px;
+        }
+
+        .game-card h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        /* 코인 섹션 */
+        .coin-section {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin: 40px 0;
+        }
+
+        .coin-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .coin-card {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+
+        /* NFT 섹션 */
+        .nft-section {
+            background: linear-gradient(to right, #2c3e50, #3498db);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            margin: 40px 0;
+            border-radius: 10px;
+        }
+
+        /* 다운로드 버튼 */
+        .download-buttons {
             display: flex;
             justify-content: center;
             gap: 20px;
             margin: 40px 0;
         }
 
-        .social-links a {
-            color: #333;
+        .download-button {
+            padding: 15px 30px;
+            background: #00a8ff;
+            color: white;
             text-decoration: none;
-            font-size: 1.2em;
-            transition: color 0.3s;
+            border-radius: 5px;
+            transition: background 0.3s;
         }
 
-        .social-links a:hover {
-            color: #00a8ff;
+        .download-button:hover {
+            background: #0088cc;
         }
 
-        /* 푸터 스타일 */
+        /* 푸터 */
         footer {
-            background-color: #333;
+            background: #333;
             color: white;
             padding: 40px 0;
             margin-top: 60px;
@@ -132,11 +181,6 @@
             padding: 0 20px;
         }
 
-        .contact-form {
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
         .contact-form input,
         .contact-form textarea {
             width: 100%;
@@ -146,18 +190,22 @@
             border-radius: 5px;
         }
 
-        .contact-form button {
-            background-color: #00a8ff;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
         }
 
-        .contact-form button:hover {
-            background-color: #0088cc;
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #00a8ff;
         }
     </style>
 </head>
@@ -166,43 +214,58 @@
         <div class="nav-items">
             <a href="#white-paper">White Paper</a>
             <a href="#zena-swap">Zena Swap</a>
-            <a href="#zena-pay">Zena pay</a>
+            <a href="#zena-pay">Zena Pay</a>
             <a href="#zena-game">Zena Game</a>
             <a href="#dao">DAO</a>
             <a href="#etc">기타</a>
         </div>
     </nav>
 
-    <div class="container">
-        <div class="logo">
-            <img src="images/제나게임즈.png" alt="ZENA GAMES">
-        </div>
+    <section class="hero">
+        <h1>Save the Earth and North Pole</h1>
+        <p>북극에 살고 있는 엄마벨루가 와 아기 벨루가 Zena Friends "폴라베어, 하프물범,향유 고래" 와 함께 북극을 살리고, 지구를 살리기 위해 남극으로 떠나는 아기 벨루가 "Zena"의 모험과 게임을 함께 즐기며 "Green Peace"운동에 참여 하실 수 있습니다</p>
+    </section>
 
-        <section class="zena-swap" id="zena-swap">
-            <h1>Zena Swap</h1>
-            <p>Zena Swap 은 제나 생태계의 Wallet(지갑) 을 제공 하며 전 세계 De-Fi 탈 중앙화 금융 서비스를 호환, 지원 합니다</p>
-            
-            <div class="image-grid">
-                <img src="images/그림54.png" alt="Zena Swap 이미지">
-                <img src="images/그림56.png" alt="Zena Swap 이미지">
-                <img src="images/그림61.png" alt="Zena Swap 이미지">
-                <img src="images/그림55.png" alt="Zena Swap 이미지">
-                <img src="images/그림57.png" alt="Zena Swap 이미지">
-                <img src="images/그림62.png" alt="Zena Swap 이미지">
-                <img src="images/그림58.png" alt="Zena Swap 이미지">
-                <img src="images/그림59.png" alt="Zena Swap 이미지">
-                <img src="images/그림67.png" alt="Zena Swap 이미지">
-                <img src="images/그림65.png" alt="Zena Swap 이미지">
-                <img src="images/그림66.png" alt="Zena Swap 이미지">
-                <img src="images/그림64.png" alt="Zena Swap 이미지">
+    <div class="container">
+        <section class="games-section">
+            <div class="game-card">
+                <img src="images/점프.png" alt="제나 테일즈 오션">
+                <div class="game-card-content">
+                    <h3>제나 테일즈 오션</h3>
+                </div>
+            </div>
+            <div class="game-card">
+                <img src="images/슈팅1.png" alt="GALAXY WAR">
+                <div class="game-card-content">
+                    <h3>GALAXY WAR</h3>
+                </div>
+            </div>
+            <!-- 추가 게임 카드들 -->
+        </section>
+
+        <section class="coin-section">
+            <h2>제나 생태계 코인</h2>
+            <div class="coin-grid">
+                <div class="coin-card">
+                    <h3>Beluga coin</h3>
+                    <p>달러(UST), 원화(KRT)와 1:1로 페깅(Pegging)된 Stable coin입니다</p>
+                </div>
+                <div class="coin-card">
+                    <h3>Zena coin</h3>
+                    <p>Utility Coin으로 코인 거래소 상장 예정입니다</p>
+                </div>
+                <!-- 추가 코인 카드들 -->
             </div>
         </section>
 
-        <div class="social-links">
-            <a href="https://www.twitch.tv/" target="_blank">Twitch</a>
-            <a href="https://www.facebook.com/" target="_blank">Facebook</a>
-            <a href="https://discord.com/" target="_blank">Discord</a>
-            <a href="https://www.youtube.com/" target="_blank">YouTube</a>
+        <section class="nft-section">
+            <h2>Zena NFT Market</h2>
+            <p>Zena NFT Market Place를 통해 제나게임즈의 모든 NFT 상품을 구매하거나 매도 하실 수 있으며 수수료도 저렴 합니다</p>
+        </section>
+
+        <div class="download-buttons">
+            <a href="#" class="download-button">App Store에서 다운로드</a>
+            <a href="#" class="download-button">Google Play에서 다운로드</a>
         </div>
     </div>
 
@@ -214,17 +277,11 @@
                 <p>leviolla70@naver.com</p>
                 <p>서울특별시 강남구 언주로 98길9<br>국제빌딩 401호</p>
             </div>
-
-            <div class="contact-form">
-                <h3>문의하기</h3>
-                <form id="contact-form">
-                    <input type="text" placeholder="성" required>
-                    <input type="text" placeholder="이름" required>
-                    <input type="email" placeholder="이메일" required>
-                    <input type="text" placeholder="제목" required>
-                    <textarea placeholder="메시지를 남겨주세요." rows="4" required></textarea>
-                    <button type="submit">제출</button>
-                </form>
+            <div class="social-links">
+                <a href="#">Twitch</a>
+                <a href="#">Facebook</a>
+                <a href="#">Discord</a>
+                <a href="#">YouTube</a>
             </div>
         </div>
         <div style="text-align: center; padding-top: 20px;">
@@ -233,11 +290,16 @@
     </footer>
 
     <script>
-        // 폼 제출 처리
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('제출해주셔서 감사합니다!');
-            this.reset();
+        // 스크롤 애니메이션
+        window.addEventListener('scroll', function() {
+            const elements = document.querySelectorAll('.game-card, .coin-card');
+            elements.forEach(element => {
+                const position = element.getBoundingClientRect();
+                if(position.top < window.innerHeight) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
         });
     </script>
 </body>
